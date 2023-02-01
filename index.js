@@ -62,10 +62,21 @@ function setCompChoice(){
 
 function showResult(){
     if(playerCh === compCh){
-        resultText.innerText = "Result: Draw"
+        resultText.innerText = "Result: Draw";
+        resultText.classList.add("bg-secondary");
+        resultText.classList.remove("bg-success");
+        resultText.classList.remove("bg-danger");
+
+
     }else if(playerCh > compCh){
-        resultText.innerText = "Result: Player won"
+        resultText.innerText = "Result: Player won";
+        resultText.classList.remove("bg-secondary");
+        resultText.classList.add("bg-success");
+        resultText.classList.remove("bg-danger");
     }else if(playerCh < compCh){
-        resultText.innerText = "Result: Computer won"
+        resultText.innerText = "Result: Computer won";
+        resultText.classList.remove("bg-secondary");
+        resultText.classList.remove("bg-success");
+        resultText.classList.add("bg-danger");
     }
 }
