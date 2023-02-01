@@ -68,15 +68,39 @@ function showResult(){
         resultText.classList.remove("bg-danger");
 
 
-    }else if(playerCh > compCh){
-        resultText.innerText = "Result: Player won";
-        resultText.classList.remove("bg-secondary");
-        resultText.classList.add("bg-success");
-        resultText.classList.remove("bg-danger");
-    }else if(playerCh < compCh){
-        resultText.innerText = "Result: Computer won";
-        resultText.classList.remove("bg-secondary");
-        resultText.classList.remove("bg-success");
-        resultText.classList.add("bg-danger");
+    }else if(playerCh == 0){
+        if(compCh == 1){
+            compWon();
+        }else{
+            playerWon();
+        }
+       
+    }else if(playerCh == 1){
+       if(compCh == 0){
+        playerWon();
+       }else{
+        compWon();
+       }
+    }else if(playerCh == 2){
+        if(compCh == 0){
+            compWon();
+        }else{
+            playerWon();
+        }
     }
+}
+
+
+function playerWon(){
+    resultText.innerText = "Result: Player won";
+    resultText.classList.remove("bg-secondary");
+    resultText.classList.add("bg-success");
+    resultText.classList.remove("bg-danger");
+}
+
+function compWon(){
+    resultText.innerText = "Result: Computer won";
+    resultText.classList.remove("bg-secondary");
+    resultText.classList.remove("bg-success");
+    resultText.classList.add("bg-danger");
 }
